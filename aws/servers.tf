@@ -3,6 +3,13 @@ resource "aws_instance" "web" {
   instance_type = "t3.micro"
   key_name      = aws_key_pair.ssh.key_name
   vpc_security_group_ids = [aws_security_group.allow_traffic.id]
+  
+  metadata_options {
+    http_endpoint               = "disabled"
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 1
+  }
+  
   tags = {
     Name = "HelloInstance"
   }
