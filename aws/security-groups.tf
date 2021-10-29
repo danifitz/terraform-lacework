@@ -5,6 +5,7 @@ data "aws_vpc" "selected" {
 resource "aws_security_group" "allow_traffic" {
   name   = "${random_id.id.hex}-allow-traffic"
   vpc_id = data.aws_vpc.selected.id
+  description = "A security group to allow SSH inbound and all traffic outbound"
 
   ingress = [{
     description      = "SSH from 0.0.0.0/0"
