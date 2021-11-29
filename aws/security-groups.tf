@@ -8,7 +8,7 @@ resource "aws_security_group" "allow_traffic" {
   description = "A security group to allow SSH inbound and all traffic outbound"
 
   ingress = [{
-    description      = "SSH from 0.0.0.0/0"
+    description      = "SSH ingress from 0.0.0.0/0"
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
