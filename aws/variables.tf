@@ -7,10 +7,11 @@ variable "aws_default_region" {
 variable "aws_profile" {
   description = "Which AWS CLI profile to use"
   type        = string
-  default     = "daniel.fitzgerald@lacework.net"
+  default     = "personal"
 }
 
 variable "lacework_token" {
   description = "The lacework token for the agent to use to connect"
   type        = string
+  default     = "fkndfksdnfkd"
 }
